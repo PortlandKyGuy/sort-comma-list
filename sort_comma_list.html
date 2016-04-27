@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Sort comma separated list</title>
+
+   <script src="https://code.jquery.com/jquery-2.2.3.min.js" ></script>
+   <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" ></script>
+   
+   <script>
+   
+   
+   $(function() {
+	   
+	   $("#reset").click(function() {
+		   $("#input").val("");
+		   $("#output").val("");
+	   });
+	   
+	   
+	   $("#parse").click(function() {
+		   var outputStr = "";
+		   var inputStr = $("#input").val();
+		   inputStr = inputStr.trim();
+		   
+		   var strArray = inputStr.split(",");
+		   
+		  outputStr = strArray.sort(function(a,b) {
+			  a = a.trim().toLocaleLowerCase();
+			  b = b.trim().toLocaleLowerCase();
+			  var retVal = a.localeCompare(b);
+			  //console.log("{" + a + "} compared to {"+b+"}=" + retVal);
+			  return retVal;
+		  });
+		   
+		   $("#output").val(outputStr);
+	   });
+	   
+	   
+	   
+	   
+   });
+   
+   </script>
+<style>
+	#sorter {
+		background-color:rgb(236,236,236);
+		padding: 15px;
+		width: 90%;
+	}
+	
+	#sorter textarea {
+		width: 95%;
+		height: 100px;
+		border: 2px solid #cccccc;
+		margin-left: 10px;
+	}
+	
+	button {
+		font-size:14pt;
+	}
+	
+	button#reset {
+		float:right;
+	}
+</style>
+</head>
+<body>
+<h3>Overview</h3>
+<p>Sorts a comma delimited list. This will not add or remove any white spaces before or after commas.<br />
+To use, just past a comma delimited list in the first text area. Then press the Parse button. The sorted comma delimited list will show in the Output text area. That's it!<br />
+This  page uses <a href="https://jquery.com">jquery</a></p>
+<div id="sorter">
+	<h3>Sorter</h3>
+	
+	Enter a comma delimited list of words here...<br />
+	<textarea id="input" >
+	
+	</textarea>
+	<br />
+	Output...<br />
+	<textarea id="output" >
+	
+	</textarea>
+	<br />
+	<button  id="parse">Sort My List</button>
+	<button  id="reset" >Reset</button>
+</div>
+<h3>Author</h3>
+<p>By Kyle A<br />
+ <a href="http://iot-thoughts.blogspot.com/" target="_blank" title="Kyle's IoT Blog">IoT Blog</a><br />
+ <a href="https://plus.google.com/u/0/105807241682986723425" target="_blank"   title="Google Plus">Google+</a><br />
+ <a href="https://www.linkedin.com/in/kyleaa1" target="_blank"  title="LinkedIn">LinedIn</a>
+</p>
+</body>
+</html>
