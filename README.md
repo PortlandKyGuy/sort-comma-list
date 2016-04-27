@@ -14,3 +14,6 @@ By Kyle A.
  <a href="http://iot-thoughts.blogspot.com/" target="_blank" title="Kyle's IoT Blog">IoT Blog</a><br />
  <a href="https://plus.google.com/u/0/105807241682986723425" target="_blank"   title="Google Plus">Google+</a><br />
  <a href="https://www.linkedin.com/in/kyleaa1" target="_blank"  title="LinkedIn">LinedIn</a>
+
+### Tags
+javascript, jquery, comma, delimited, sort.
